@@ -127,9 +127,17 @@ function takeRecent(msgs, maxToken) {
   let len = 0;
   for (let i = msgs.length - 1; i >= 0; i--) {
     const m = msgs[i];
-    if (len + m.content.length > maxToken) break;
-    picked.unshift(m);
-    len += m.content.length;
+    const remaining = maxToken - len;
+    if (remaining <= 0) break;
+    if (m.content.length <= remaining) {
+      picked.unshift(`${m.role}：${m.content}\n\n`);
+      len += m.content.length;
+    } else {
+      // 单条超长：截断，只取末尾 remaining 字符
+      picked.unshift(`${m.role}：${m.content.slice(-remaining)}\n\n`);
+      len = maxToken;
+      break;
+    }
   }
   return picked;
 }

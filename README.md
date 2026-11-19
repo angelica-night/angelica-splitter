@@ -12,10 +12,11 @@
 
 ## 使用
 
-1. 下载 `切分工具.html`
-2. 双击，用浏览器打开（推荐 Chrome / Edge）
-3. 选 ZIP → 勾选会话 → 设 Token → 点「切分并导出」
-4. 下载得到多个 txt 块
+**在线用（推荐）**：打开 https://angelica-night.github.io/angelica-splitter/ 直接用，不用下载。
+
+**下载离线用**：下载 `index.html`，双击用浏览器打开（推荐 Chrome / Edge）。
+
+操作：选 ZIP → 勾选会话 → 设 Token → 点「切分并导出」→ 下载得到多个 txt 块。
 
 ## 隐私
 
